@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <title>To do List</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: 0;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        padding: 50px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    form {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 400px;
+        padding: 15px;
+    }
+
+    button {
+        padding: 15px;
+        font-weight: bold;
+        /* font-size: 22px; */
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .content { 
+
+    }
+
+</style>
+
+<body>
+   <div>
+        <form>
+            <h1>To do List</h1><br>
+            <input type="text" class="input" placeholder="Escreve sua tarefa" />
+            <button>+</button>
+        </form>
+        <div class="content"></div>
+    </div>
+
+    
+
+    <script>
+        let inputEl = document.querySelector('.input')
+        let btnEl = document.querySelector('button')
+        let contentEl = document.querySelector('.content')
+
+        list = []
+        
+        
+        btnEl.addEventListener('click', e => {
+            e.preventDefault()
+
+            if(inputEl.value.length > 0) {
+                list.push(String(inputEl.value))
+                console.log(list)
+            }
+            
+            renderHtml()
+            inputClear()
+
+        })
+
+        function inputClear() {
+            inputEl.value = ''
+        }
+
+        function renderHtml() {
+            contentEl.innerHTML = ""
+
+            list.forEach(element => {
+                contentEl.innerHTML += `<p>${element}</p>`
+            });
+        }
+    
+
+        console.log('Linkedin: https://www.linkedin.com/in/weslley-l-silva-512741188/')
+
+    </script>
+</body>
+</html>
