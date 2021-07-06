@@ -1,0 +1,17 @@
+$backgroundBlack: #000;
+$fontColor: #fff;
+$fontFamilDefault: 'Roboto', sans-serif;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: $fontFamilDefault;
+  background-color: $backgroundBlack;
+  color: $fontColor
+}
